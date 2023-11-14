@@ -1,9 +1,7 @@
 package com.ms.email.entities;
 
 import com.ms.email.enums.StatusEmail;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -15,6 +13,8 @@ import java.time.LocalDateTime;
 public class EmailEntity implements Serializable {
     private static final long serialVersionUID = 1L;
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long emailId;
     private String ownerRef;
     private String emailFrom;
