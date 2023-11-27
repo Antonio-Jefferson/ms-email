@@ -1,8 +1,10 @@
 package com.ms.email.entities;
 
+import com.ms.email.dtos.EmailDTO;
 import com.ms.email.enums.StatusEmail;
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.experimental.SuperBuilder;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
@@ -11,6 +13,7 @@ import java.util.UUID;
 @Data
 @Entity
 @Table(name = "TB_EMAIL")
+@SuperBuilder
 public class EmailEntity implements Serializable {
     private static final long serialVersionUID = 1L;
 
@@ -25,4 +28,13 @@ public class EmailEntity implements Serializable {
     private String text;
     private LocalDateTime sendDateEmail;
     private StatusEmail statusEmail;
+
+    public static EmailEntity toEntity(EmailDTO emailDTO) {
+        return EmailEntity.builder()
+                .userId(emailDTO.getUserId())
+                .emailTo(emailDTO.getEmailTo())
+                .subject(emailDTO.getSubject())
+                .text(emailDTO.getText())
+                .build();
+    }
 }

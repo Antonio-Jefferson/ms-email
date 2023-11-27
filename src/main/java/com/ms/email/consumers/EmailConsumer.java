@@ -16,8 +16,7 @@ public class EmailConsumer {
 
     @RabbitListener(queues = "${broker.queue.email.name}")
     public void listenEmailQueue(@Payload EmailDTO emailDTO){
-        var emailEntity = new EmailEntity();
-        BeanUtils.copyProperties(emailDTO, emailEntity);
+        EmailEntity emailEntity = EmailEntity.toEntity(emailDTO);
         emailService.sendEmail(emailEntity);
     }
 }

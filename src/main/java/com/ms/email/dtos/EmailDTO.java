@@ -1,5 +1,6 @@
 package com.ms.email.dtos;
 
+import com.ms.email.entities.EmailEntity;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
