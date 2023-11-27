@@ -1,17 +1,17 @@
 package com.ms.email.dtos;
 
-import jakarta.persistence.Column;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Data;
 
+import java.util.UUID;
+
 @Data
 public class EmailDTO {
     @NotBlank
-    private String ownerRef;
+    private String name;
     @NotBlank
-    @Email
-    private String emailFrom;
+    private UUID userId;
     @NotBlank
     @Email
     private String emailTo;

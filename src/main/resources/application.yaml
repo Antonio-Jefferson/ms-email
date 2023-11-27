@@ -13,7 +13,7 @@ spring:
     host: smtp.gmail.com
     port: 587
     username: at.jefferson.nascimento@gmail.com
-    password: sjrfmurjrxtwhcl
+    password: xheplvdxojdgleay
     properties:
       mail:
         smtp:
@@ -21,7 +21,7 @@ spring:
           starttls:
             enable: true
   rabbitmq:
-    addresses: amqps://edkcfbzn:nPYBQz6WE0IpILLxQVID38HN3gqq--yy@woodpecker.rmq.cloudamqp.com/edkcfbzn
+    addresses: amqps://occvhbem:xmMmD9UJgrPJZ_av8kozrZAbaoiZ0RXB@woodpecker.rmq.cloudamqp.com/occvhbem
 broker:
   queue:
     email:
